@@ -1,0 +1,47 @@
+<div ng-cloak>
+    <div class="container">
+        <div class="section">
+            <h5 class="" translate="table.home.title">Tables from {{database}}</h5>
+            <a ui-sref="tables_create" class="waves-effect waves-light btn btn-sm">
+                <i class="material-icons left">add</i> Create Table
+            </a>
+            <hr>
+            
+            <div id="delete-form" class="modal">
+                <div class="modal-content">
+                    <h6>Are you sure to drop this table</h6>
+                    <p>{{table}}</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="drop(table)">OK</a>
+                </div>
+            </div>
+            <div class="card-panel">
+                <table class="responsive-table bordered">
+                    <thead>
+                        <tr>
+                            <th translate="table.name">Name</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="table in tables">
+                            <td>{{table.tab_name}}</td>
+                            <td class="text-right">
+                                <a href="javascript:void(0)" ui-sref="table_detail({database: '{{database}}', table: '{{table.tab_name}}'})">
+                                    <i class="material-icons">visibility</i>
+                                </a>
+                                <a href="javascript:void(0)" ng-click="showFormUpdate(table.tab_name)">
+                                    <i class="material-icons">edit</i>
+                                </a>
+                                <a href="javascript:void(0)" ng-click="confirm(table.tab_name)">
+                                    <i class="material-icons">delete</i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

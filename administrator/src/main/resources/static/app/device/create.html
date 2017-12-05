@@ -1,0 +1,53 @@
+<div ng-cloak>
+    <div class="container">
+        <div class="section">
+            <h5 class="" translate="device.home.title">Device</h5>
+            <div class="card-panel">
+                <form class="col s12" name="createForm" ng-submit="create()">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input ng-model="device.clientName" ng-required="device.clientName == null" ng-maxlength="50" id="device_name" type="text" class="validate">
+                            <label for="device_name">Client Name</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input ng-model="device.webServerRedirectUri" ng-required="device.clientName == null" ng-maxlength="50" type="text" class="validate">
+                            <label for="device_name">Redirect URL</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <select class="input_select" ng-required="device.scope == null"  multiple ng-model="device.scope">
+                                <option value="" disabled selected>Scopes</option>
+                                <option value="insert">Insert</option>
+                                <option value="select">Select</option>
+                                <option value="update">Update</option>
+                                <option value="delete">Delete</option>
+                            </select>
+                            <label for="roles">Scope</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <select class="input_select" ng-required="device.authorizedGrantTypes == null"  multiple ng-model="device.authorizedGrantTypes">
+                                <option value="" disabled selected>Grant Type</option>
+                                <option value="authorization_code">authorization_code</option>
+                                <option value="client_credentials">client_credentials</option>
+                                <option value="refresh_token">refresh_token</option>
+                            </select>
+                            <label for="roles">Grant Type</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <select class="input_select" ng-required="device.authorities == null"  multiple ng-model="device.authorities">
+                                <option value="" disabled selected>Authority</option>
+                                <option value="ROLE_ADMIN">Administrator</option>
+                                <option value="ROLE_DEVELOPER">Developer</option>
+                                <option value="ROLE_USER">User</option>
+                                <option value="ROLE_CLIENT">Client</option>
+                            </select>
+                            <label for="roles">Authority</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <button type="submit" class=" modal-action modal-close left waves-effect waves-green btn blue"><i class="material-icons left">add</i>Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,122 @@
+<div ng-cloak>
+    <div class="container" ng-init="loadQuery()">
+        <div class="section">
+            <h5>Saved Query</h5>
+            <hr>
+
+            <div id="delete-form" class="modal">
+                <div class="modal-content">
+                    <h6>Are you sure to drop this query</h6>
+                    <p>{{query}}</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="drop()">OK</a>
+                </div>
+            </div>
+            <div class="card-panel">
+                <div class="col s12">
+                    <ul class="tabs text-blue" tabs>
+                        <li class="tab col s3 text-blue"><a class="active text-blue" href="#saved_query">Saved Query</a></li>
+                        <li class="tab col s3 text-blue"><a href="#result_query">Result Query</a></li>
+                    </ul>
+                </div>
+                <div id="saved_query" class="col s12">
+                    <table class="responsive-query bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Interval</th>
+                                <th>Query SQL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="query in queries.content">
+                                <td>{{query.name}}</td>
+                                <td>{{query.intervalQuery}}</td>
+                                <td>{{query.sql}}</td>
+                                <td class="text-right">
+                                    <a href="javascript:void(0)" ui-sref="query_result({query_id :'{{query.id}}'})">
+                                        <i class="material-icons">visibility</i>
+                                    </a>
+                                    <a href="javascript:void(0)" ng-click="showFormUpdate(query.tab_name)">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+                                    <a href="javascript:void(0)" ng-click="confirm(query.id)">
+                                        <i class="material-icons">delete</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="result_query" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s3">
+                            <select id="query"  material_select ng-model="querySelected">
+                                <option ng-repeat="query in queries.content" value="{{query.id}}">{{ query.name}}</option>
+                            </select>
+                            <label for="query">List Query</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input input-date
+                                   type="text"
+                                   name="created"
+                                   id="startdate"
+                                   ng-model="startdate"
+                                   container="body"
+                                   format="dd-mm-yyyy"
+                                   months-full="{{ month}}"
+                                   months-short="{{ monthShort}}"
+                                   weekdays-full="{{ weekdaysFull}}"
+                                   weekdays-short="{{ weekdaysShort}}"
+                                   weekdays-letter="{{ weekdaysLetter}}"
+                                   disable="disable"
+                                   today="today"
+                                   clear="clear"
+                                   close="close"
+                                   select-years="15" />
+                            <label for="startdate">Start Date</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input input-date
+                                   type="text"
+                                   name="created"
+                                   id="enddate"
+                                   ng-model="enddate"
+                                   container="body"
+                                   format="dd-mm-yyyy"
+                                   months-full="{{ month}}"
+                                   months-short="{{ monthShort}}"
+                                   weekdays-full="{{ weekdaysFull}}"
+                                   weekdays-short="{{ weekdaysShort}}"
+                                   weekdays-letter="{{ weekdaysLetter}}"
+                                   disable="disable"
+                                   today="today"
+                                   clear="clear"
+                                   close="close"
+                                   select-years="15" />
+                            <label for="enddate">End Date</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <button ng-click="getResultQuery()" class="btn btn-blue">Search</button>
+                        </div>
+                    </div>
+                    <div>
+                        <table class="responsive-table condensed bordered striped highlight">
+                            <thead>
+                                <tr>
+                                    <th ng-repeat="label in queryResultLabel">{{label}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="data in queryResultDetail">
+                                    <td ng-repeat="label in queryResultLabel">{{ data[label]}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

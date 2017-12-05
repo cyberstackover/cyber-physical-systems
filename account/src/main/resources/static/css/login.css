@@ -1,0 +1,123 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 20, 2015, 9:49:28 AM
+    Author     : Vizzca Indra P
+*/
+
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+.bg-header {
+    background: url(../img/bg/bg.png) #005396;
+    width: 100%;
+}
+.bg-content {
+    width: 100%;
+    position: absolute;
+}
+
+.container-login {
+    margin-top: -80px;
+}
+
+.container-footer {
+    width: 400px;
+}
+
+.text-footer {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.header-login {
+    background-color: #136eb2;
+    color: #ffffff;
+    padding: 25px;
+    margin-bottom: 0px;
+    min-height: 80px;
+    max-height: 80px;
+}
+
+.header-login h4 {
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.icons-login {
+    font-size: 40px;
+}
+
+.header-login span {
+    
+}
+
+.content-login {
+    padding: 25px;
+}
+
+.back-shadow {
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+input.input-login {
+    background: #fafafa!important;
+    padding: 25px!important;
+    border-radius: 2px!important;
+    border: #ebebeb solid 1px!important;
+    margin: 15px;
+    font-size: 16px;
+    color: #959595;
+}
+
+input.input-login:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .bg-header {
+        height: 150px;
+    }
+    
+    .container-login {
+        width: 80%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .bg-header {
+        height: 150px;
+    }
+    
+    .container-login {
+        width: 400px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .bg-header {
+        height: 250px;
+    }
+    
+    .container-login {
+        width: 450px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .bg-header {
+        height: 250px;
+    }
+    
+    .container-login {
+        width: 450px;
+    }
+}
+

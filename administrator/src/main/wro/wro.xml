@@ -1,0 +1,36 @@
+<groups xmlns="http://www.isdc.ro/wro">
+    <group name="vendor">
+        <css>file:${project.basedir}/src/main/resources/static/bower_components/**.min.css</css>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/bower_components/modernizr/modernizr.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/jquery/dist/jquery.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular/angular.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-route/angular-route.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-aria/angular-aria.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-cache-buster/angular-cache-buster.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-cookies/angular-cookies.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-local-storage/dist/angular-local-storage.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-resource/angular-resource.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-sanitize/angular-sanitize.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-translate/angular-translate.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/messageformat/messageformat.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-translate-loader-partial/angular-translate-loader-partial.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-ui-router/release/angular-ui-router.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-animate/angular-animate.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/materialize/dist/js/materialize.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-materialize/src/angular-materialize.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/angular-loading-bar/build/loading-bar.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/json3/lib/json3.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/ng-file-upload/ng-file-upload.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js</js>
+        <js>file:${project.basedir}/src/main/resources/static/bower_components/ngmap/build/scripts/ng-map.min.js</js>
+        
+    </group>
+    
+    <group name="app">
+        <css>file:${project.basedir}/src/main/resources/static/assets/**.css</css>
+        <js>file:${project.basedir}/src/main/resources/static/app/**.js</js>
+    </group>
+</groups>

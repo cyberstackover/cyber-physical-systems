@@ -1,0 +1,104 @@
+<div ng-cloak ng-if="isAuthenticated">
+    <div class="container" ng-init="init()">
+        <div class="section">
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s3 m3">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Databases</span>
+                            <p>{{rootScope.databases.length}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s3 m3">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Tables</span>
+                            <p>{{rootScope.tables.length}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s3 m3">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Users</span>
+                            <p>{{sensors.lenght}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s3 m3">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">Sensors</span>
+                            <p>{{sensors.lenght}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s3 m3">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">List Databases</span>
+                            <table class="responsive-table bordered" style="max-height: 300px; overflow: auto">
+                                <thead>
+                                    <tr>
+                                        <th>Database</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="database in rootScope.databases">
+                                        <td>{{database.database_name}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s3 m3">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">List Tables</span>
+                            <div style="max-height: 220px; overflow: auto">
+                                <table class="responsive-table bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Tab name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="table in rootScope.tables">
+                                            <td>{{table.tab_name}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s3 m3">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">List Sensors</span>
+                            <div style="max-height: 220px; min-height: 220px; overflow: auto">
+                                <table class="responsive-table bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Client Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="sensor in sensors">
+                                            <td>{{sensor.clientName}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

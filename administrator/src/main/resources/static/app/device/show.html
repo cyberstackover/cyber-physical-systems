@@ -1,0 +1,22 @@
+<div ng-cloak>
+    <div class="container" ng-init="show()">
+        <div class="section">
+            <h5 class="" translate="device.home.title">Device</h5>
+            <div class="card-panel">
+                <table class="responsive-table condensed bordered striped highlight">
+                    <thead>
+                        <tr>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="label in labels">
+                            <td >{{ label }}</td>
+                            <td >{{ device[label]}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

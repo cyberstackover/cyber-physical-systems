@@ -1,0 +1,62 @@
+<div ng-cloak>
+    <div class="container" ng-init="loadAll()">
+        <div class="section">
+            <div class="row">
+                <h5 class="col-sm-6">Data {{database}}.{{table}}</h5>
+            </div>
+            <div class="card-panel">
+                <div class="row">
+                    <div class="col s12">
+                        <ul class="tabs" tabs>
+                            <li class="tab col s3"><a class="active" href="#data">Data</a></li>
+                            <li class="tab col s3"><a href="#column">Column</a></li>
+                        </ul>
+                    </div>
+                    <div id="data" class="col s12" style="max-width:100%; overflow:auto">
+                        <table class="responsive-table bordered striped highlight">
+                            <thead>
+                                <tr>
+                                    <th ng-repeat="label in labels">{{label}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="data in datas">
+                                    <td ng-repeat="label in labels">{{ data[label]}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <pagination
+                            page="1"
+                            page-size="data.totalElements"
+                            total="data.totalPages"
+                            show-prev-next="true"
+                            dots="...."
+                            hide-if-empty="false"
+                            adjacent="2"
+                            scroll-top="false"
+                            pagination-action="changePage(page)" />
+                    </div>
+                    <div id="column" class="col s12">
+                        <table class="responsive-table bordered">
+                            <thead>
+                                <tr>
+                                    <th>col_name</th>
+                                    <th>data_type</th>
+                                    <th>comment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="column in columns">
+                                    <td ng-if="column.col_name">{{column.col_name}}</td>
+                                    <td ng-if="column.data_type" class="bold">{{column.data_type}}</td>
+                                    <td ng-if="column.comment">{{column.comment}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

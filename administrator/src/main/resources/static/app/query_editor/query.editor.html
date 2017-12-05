@@ -1,0 +1,109 @@
+<div ng-cloak>
+    <div class="container">
+        <div class="section">
+            <div class="card-panel">
+                <div style="height: 150px" ui-ace="{
+                     workerPath: '/path/to/ace/folder',
+                     useWrapMode : true,
+                     showGutter: true,
+                     theme:'sqlserver',
+                     mode: 'sql',
+                     onLoad : aceLoaded,
+                     require: ['ace/ext/language_tools'],
+                     advanced: {
+                     enableSnippets: true,
+                     enableBasicAutocompletion: true,
+                     enableLiveAutocompletion: true
+                     }
+                     }">
+                </div>
+                <hr>
+                <a class="waves-effect waves-light btn blue" ng-click="submitQuery()">Execute</a>
+                <a class="waves-effect waves-light btn" ng-click="explainQuery()"><i class="material-icons left">cloud</i>Explain</a>
+                <a class="waves-effect waves-light btn" ng-click="saveQuery(true)"><i class="material-icons right">add_box</i>Save</a>
+
+            </div>
+            <div class="card-panel">
+                <div class="row" >
+                    <div class="col s12">
+                        <ul class="tabs" tabs>
+                            <li class="tab col s3"><a class="blue-text" href="#result">Result</a></li>
+                            <li class="tab col s3"><a class="blue-text" href="#history">Query History</a></li>
+                            <li class="tab col s3"><a class="blue-text" href="#query">Query</a></li>
+                            <li class="tab col s3"><a class="blue-text" href="#test4">Column</a></li>
+                        </ul>
+                    </div>
+                    <div id="result" class="col s12" style="max-width:100%; overflow:auto">
+                        <table class="responsive-table condensed bordered striped highlight">
+                            <thead>
+                                <tr>
+                                    <th ng-repeat="label in labels">{{label}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="data in datas">
+                                    <td ng-repeat="label in labels">{{ data[label]}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="history" class="col s12">
+                        <table class="responsive-table condensed bordered striped highlight">
+                            <tbody>
+                                <tr ng-repeat="row in histories">
+                                    <td>{{ row.sql}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="query" class="col s12">
+                        <div class="card-panel">
+                            <span class="blue-text text-darken-2">{{sql}}</span>
+                        </div>
+                    </div>
+                    <div id="test4" class="col s12">
+                        <table class="responsive-table condensed bordered striped highlight">
+                            <tbody>
+                                <tr ng-repeat="label in labels">
+                                    <td>{{ label}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="save-form" class="modal" style="min-height: 300px">
+    <form class="col s12" name="createForm" ng-submit="saveQuery(false)">
+        <div class="modal-content">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input ng-model="query.name" ng-required="name == null" ng-maxlength="100" id="name" type="text" class="validate">
+                    <label for="name">Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select class="input_select" ng-required="query.intervalQuery == null" material_select ng-model="query.intervalQuery">
+                        <option value="hourly">hourly</option>
+                        <option value="daily">daily</option>
+                        <option value="weekly">weekly</option>
+                        <option value="monthly">monthly</option>
+                        <option value="annualy">annualy</option>
+                    </select>
+                    <label for="interval_query">Interval Query</label>
+                </div>
+            </div>
+            <div>
+                <input ng-model="query.isReplaced" id="is_replaced" value="t" type="checkbox">
+                <label for="is_replaced">Save as new row</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class=" modal-action modal-close waves-effect waves-light btn blue">Save</button>
+            <button type="button" class=" modal-action modal-close waves-effect waves-ripple btn red" style="margin-right:  10px">Cancel</button>
+        </div>
+    </form>
+</div>

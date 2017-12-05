@@ -1,0 +1,37 @@
+<div ng-cloak>
+    <div class="container" ng-init="loadQueryResult()">
+        <div class="section">
+            <h5>Query Result</h5>
+            <hr>
+            <div id="delete-form" class="modal">
+                <div class="modal-content">
+                    <h6>Are you sure to drop this query</h6>
+                    <p>{{query}}</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="drop(query)">OK</a>
+                </div>
+            </div>
+            <div class="card-panel">
+                <div class="input-field col s12">
+                    <select id="date" material_select ng-model="queryResultSelected" ng-change="getDetail()">
+                        <option ng-repeat="query in query_result.content" value="{{query.id}}">{{ convertTimeStamptToDate(query.created) }}</option>
+                    </select>
+                    <label for="date">List Result</label>
+                </div>
+                <table class="responsive-table condensed bordered striped highlight">
+                    <thead>
+                        <tr>
+                            <th ng-repeat="label in queryResultLabel">{{label}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="data in queryResultDetail">
+                            <td ng-repeat="label in queryResultLabel">{{ data[label]}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

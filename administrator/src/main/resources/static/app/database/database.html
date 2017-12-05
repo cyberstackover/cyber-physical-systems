@@ -1,0 +1,53 @@
+<div ng-cloak>
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <h5 class="col-sm-6" translate="database.home.title">Database</h5>
+            </div>
+            <form class="col s12" name="createForm" ng-submit="create()">
+                <div class="row">
+                    <div class="input-field col s8">
+                        <input ng-model="database" id="database_name" type="text">
+                        <label for="database_name">Database Name</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <button type="submit" class="waves-effect waves-green btn blue">
+                            <i class="material-icons">add</i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="delete-form" class="modal">
+                <div class="modal-content">
+                    <h6>Are you sure to drop this database</h6>
+                    <p>{{database.database_name}}</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="drop(database.database_name)">OK</a>
+                </div>
+            </div>
+
+            <div class="card-panel">
+                <table class="responsive-table bordered">
+                    <thead>
+                        <tr>
+                            <th translate="database.database">Database</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="database in databases">
+                            <td>{{database.database_name}}</td>
+                            <td class="text-right">
+                                <a href="#delete-form" ng-click="confirm(database)" class="waves-effect waves-light btn red btn-sm">
+                                    <i class="material-icons">delete</i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

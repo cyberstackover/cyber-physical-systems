@@ -1,0 +1,83 @@
+<nav role="navigation" class="light-blue darken-3" style="padding-left: 10px; position: fixed; z-index: 1000;">
+    <a href="#" ng-if="isAuthenticated()" class="top-nav" >
+        <i class="mdi-navigation-menu" style="font-size: 26px"></i>
+    </a>
+    <a class="brand-logo" href="#" id="logo-container"> Cyber System</a>
+    <ul class="right hide-on-med-and-down"  ng-if="!isAuthenticated()">
+        <li><a href="#" ng-click="login()">Login</a></li>
+    </ul>
+    <ul class="right hide-on-large-only-and-down" ng-if="isAuthenticated()">
+        <li><a href="javascript:void(0);" ng-click="logout()">Logout</a></li>
+    </ul>
+</nav>
+<header>
+    <ul id="nav-mobile" class="side-nav fixed" style="margin-top: 65px">
+
+        <li class="bold">
+            <select class="" id="database_name" ng-change="updateDatabase()" material-select watch ng-model="database">
+                <option ng-repeat="database in databases">{{database.database_name}}</option>
+            </select>
+        </li>
+        <li class="bold"><a ui-sref="dashboard" class="waves-effect waves-teal">Dashboard</a></li>
+        <li class="bold"><a ui-sref="database" class="waves-effect waves-teal">Databases</a></li>
+        <li class="bold"><a ui-sref="tables" class="waves-effect waves-teal">Tables</a></li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                    <a class="collapsible-header  waves-effect waves-teal">Data</a>
+                    <div class="collapsible-body column-table" >
+                        <ul class="collapsible">
+                            <li class="bold" ng-repeat="table in tables">
+                                <span class="collapsible-header  waves-effect">
+                                    <i style="margin: 0" class="tiny material-icons" ng-click="fetchColumns(table)">toc</i>
+                                    <a style="margin: 0" ui-sref="data({database: '{{database}}', table: '{{table.tab_name}}'})" class="">
+                                        {{table.tab_name}}
+                                    </a>
+                                </span>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li ng-repeat="column in table.columns" class="bold">{{column.col_name}} : {{column.data_type}}</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Api</a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li class="bold"><a ui-sref="devices" class="waves-effect waves-teal">Devices</a></li>
+                            <li class="bold"><a ui-sref="activities" class="waves-effect waves-teal">Activities</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Query</a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li class="bold"><a ui-sref="query-editor" class="waves-effect waves-teal">Query Editor</a></li>
+                            <li class="bold"><a ui-sref="saved-query" class="waves-effect waves-teal">Saved Query</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li class="bold"><a ui-sref="jobs" class="waves-effect waves-teal">Job Tracker</a></li>
+        <li class="bold"><a ui-sref="hdfs_manager" class="waves-effect waves-teal">HDFS Browser</a></li>
+        <li class="bold"><a ui-sref="reports" class="waves-effect waves-teal">Report</a></li>
+        <li class="bold"><a ui-sref="users" class="waves-effect waves-teal">Users</a></li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li class="bold">
+                    <a class="collapsible-header  waves-effect waves-teal">Account</a>
+                    <div class="collapsible-body column-table" >
+                        <ul class="collapsible">
+                            <li class="bold">
+                                <a ui-sref="profile" class="waves-effect waves-teal">Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</header>

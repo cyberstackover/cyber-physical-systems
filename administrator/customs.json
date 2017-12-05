@@ -1,0 +1,16 @@
+{
+    "elements": {
+        "angular-filemanager": {}
+    },
+    "attributes": {
+        "tabs": {},
+        "ui-view": {},
+        "dropdown": {
+            "context": "a"
+        },
+        "ui-ace": {},
+        "ui-sref": {
+            "context": "a"
+        }
+    }
+}

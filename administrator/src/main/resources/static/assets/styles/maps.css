@@ -1,0 +1,150 @@
+#maps {
+    overflow: hidden;
+}
+
+#map {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 0px;
+}
+
+#map svg {
+    width: 100%;
+    height: 100%;
+}
+
+#map .feature {
+    fill : #2C2C43;
+    stroke : #222234;
+}
+
+#c {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    z-index: 1;
+    margin-top: 122px;
+}
+
+#s {
+    position: absolute;
+    left: 15px;
+    top: 115px;
+    z-index: 2;
+}
+
+#s svg {
+    height: 800px;
+}
+
+.gtLeg, .gttLeg {
+    fill : #f9f9f9;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+}
+
+.com-mess {
+    font-size: 11pt;
+    font-family: Verdana,serif;
+    fill-opacity: .3;
+}
+
+#pb {
+    float: right;
+    bottom: 0px;
+    position: fixed;
+    z-index: 100;
+    height: auto;
+    font-size: 10px;
+    width: 100%;
+    display: none;
+}
+
+#menu-maps {
+    position: relative;
+    background-color: #222234;
+    padding: 0px;
+    z-index: 50;
+    width: 100%;
+    box-shadow: 0 5px 5px rgba(0,0,0,.05);
+    border-bottom: 1px solid #20202f;
+}
+
+#info {
+    z-index: 51;
+    float: right;
+}
+
+#menu-maps ul {
+    margin: 0px;
+    height: 50px;
+}
+
+#info ul {
+    padding: 0;
+    list-style: none;
+    vertical-align: middle;
+}
+
+#menu-maps ul > li {
+    margin: 0;
+    padding: 4px 2px;
+    margin-right: 2px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+img {
+    display: inline-block;
+}
+
+.tooltip-maps {
+    padding: 10px;
+    color: #000;
+    border: 1px solid #eee;
+    line-height: 1.5em;
+    z-index: 999;
+    font-family: Arial;
+    font-size: 11px;
+    background: #fff;
+    opacity: 1;
+    position: absolute;
+}
+
+#info li {
+    border: 0;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+#info li ul {
+    display: none;
+    color: #f9f9f9;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .8);
+}
+
+#info li ul li {
+    background-color: rgba(255,255,255,.3);
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#info li li {
+    display: block;
+    border: 0;
+    padding-right: 2px;
+}
+
+#info li:last-child {
+    border: 0;
+}
+
+#info li:hover ul {
+    display: block;
+}
+
+.gLeg {
+    font-size: 11px;
+    margin-left: 10px;
+}

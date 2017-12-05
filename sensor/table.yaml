@@ -1,0 +1,18 @@
+- !!com.cyber.sensor.models.Table
+  tableName: atlas
+  columnSeparator: ","
+  columns:
+  - {name: date, nullValue: '', type: String}
+  - {name: time, nullValue: '', type: String}
+  - {name: orp, nullValue: '', type: String}
+  - {name: ph, nullValue: '', type: String}
+  - {name: ec, nullValue: '', type: String}
+  - {name: tds, nullValue: '', type: String}
+  - {name: sal, nullValue: '', type: String}
+  - {name: sg, nullValue: '', type: String}
+  - {name: do, nullValue: '', type: String}
+  - {name: temp, nullValue: '', type: String}
+  database: cyber
+  driver: csv
+  filename: rov1.csv
+  lineSeparator: \n

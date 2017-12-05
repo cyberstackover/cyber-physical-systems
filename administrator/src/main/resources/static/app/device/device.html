@@ -1,0 +1,61 @@
+<div ng-cloak>
+    <div class="container" ng-init="loadAll()">
+        <div class="section">
+            <h5 class="" translate="device.home.title">Device</h5>
+            <a ui-sref="devices_create" class="waves-effect waves-light btn btn-sm">
+                <i class="material-icons left">add</i> Create Device
+            </a>
+            <hr>
+            <div id="delete-form" class="modal">
+                <div class="modal-content">
+                    <h6>Are you sure to drop this device</h6>
+                    <p>{{device.name}}</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="drop(device)">OK</a>
+                </div>
+            </div>
+            <div class="card-panel">
+                <table class="responsive-table bordered">
+                    <thead>
+                        <tr>
+                            <th translate="device.client_name">Client Name</th>
+                            <th translate="device.client_id">ClientId</th>
+                            <th translate="device.client_secret">Client Secret</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="device in devices">
+                            <td>{{device.clientName}}</td>
+                            <td>{{device.clientId}}</td>
+                            <td>{{device.clientSecret}}</td>
+                            <td class="text-right">
+                                <a ui-sref="device_show({id: '{{device.clientId}}'})" class="">
+                                    <i class="material-icons">visibility</i>
+                                </a>
+                                <a ui-sref="device_edit({id: '{{device.clientId}}'})" class="">
+                                    <i class="material-icons">edit</i>
+                                </a>
+                                <a href="javascript:void(0)" ng-click="confirm(device)">
+                                    <i class="material-icons" style="color: red">delete</i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <pagination
+                    page="1"
+                    page-size="data.totalElements"
+                    total="data.totalPages"
+                    show-prev-next="true"
+                    dots="...."
+                    hide-if-empty="false"
+                    adjacent="2"
+                    scroll-top="false"
+                    pagination-action="changePage(page)" />
+            </div>
+        </div>
+    </div>
+</div>

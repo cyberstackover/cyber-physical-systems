@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Nov 27 23:44:49 ICT 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0151-49d5-3836-000002e87e38 
+on database directory D:\TA LJ\matagaruda\api\metastore_db with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Loaded from file:/C:/Users/Masfu%20Hisyam/.m2/repository/org/apache/derby/derby/10.10.2.0/derby-10.10.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_05-b13
+user.dir=D:\TA LJ\matagaruda\api
+os.name=Windows 8.1
+os.arch=amd64
+os.version=6.3
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

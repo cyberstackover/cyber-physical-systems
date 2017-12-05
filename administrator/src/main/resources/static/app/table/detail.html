@@ -1,0 +1,18 @@
+<div ng-cloak>
+    <div class="container" ng-init="detail()">
+        <div class="section">
+            <h5 class="" translate="table.home.title">Table</h5>
+            <div class="card-panel">
+                <table class="responsive-table bordered">
+                    <tbody>
+                        <tr ng-repeat="detail in details">
+                            <td ng-if="detail.col_name">{{detail.col_name}}</td>
+                            <td ng-if="detail.data_type" class="bold">{{detail.data_type}}</td>
+                            <td ng-if="detail.comment">{{detail.comment}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

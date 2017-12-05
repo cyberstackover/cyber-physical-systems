@@ -1,0 +1,24 @@
+<div ng-cloak>
+    <div class="container">
+        <div class="section">
+            <h5 class="" translate="table.home.title">Table</h5>
+            <div class="card-panel">
+                <form class="col s12" name="createForm" ng-submit="create()">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input ng-model="table.name" ng-required="table.clientName == null" ng-maxlength="50" id="table_name" type="text" class="validate">
+                            <label for="table_name">Table Name</label>
+                        </div>
+                    </div>
+                    <div field-directive ng-repeat="input in inputs"></div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button type="submit" class="waves-effect waves-light btn blue"><i class="material-icons left">add</i>Save</button>
+                            <a ng-click="addField()" class="waves-effect waves-light btn green"><i class="material-icons left">add</i>Add Field</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

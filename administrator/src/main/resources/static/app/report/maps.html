@@ -1,0 +1,13 @@
+<div ng-cloak>
+    <div>
+        <div class="input-field col s4" style="position: fixed; left: 350px; top: 50px; z-index: 1600">
+            <input ng-model="number_of_k"  style="color: #FFF" type="number" class="validate">
+        </div>
+        <div class="input-field col s4" style="position: fixed; left: 600px; top: 55px; z-index: 1600">
+            <button ng-click="refresh()" class="waves-effect waves-light btn red">Run</button>
+        </div>
+        <ng-map center="21.5235584, 41.9196471" styles="[ { 'stylers': [ { 'invert_lightness': true } ] } ]" zoom="2" mayTypeId="ROADMAP" style="height:600px">
+            <marker ng-repeat="p in point" icon="{{p.icon}}" position="{{p.position}}" title="{{p.name}}"></marker>
+        </ng-map>
+    </div>
+</div>

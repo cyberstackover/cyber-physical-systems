@@ -1,0 +1,238 @@
+/* Copy from the style used on the materializecss.com */
+
+/***************
+  HTML Styles
+***************/
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    background-color: #fcfcfc; 
+    min-height: 100%;
+}
+.page {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: 100px; 
+}
+.page:after {
+    content: "";
+    display: block;
+}
+.page-footer, .page:after {
+    height: 70px; 
+}
+.page-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+}
+p.box {
+    padding: 20px; }
+
+p {
+    color: rgba(0, 0, 0, 0.71);
+    padding: 0;
+    -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3, h4, h5, h6 {
+    -webkit-font-smoothing: antialiased; }
+
+.side-nav{
+    z-index: 50;
+}
+.side-nav a {
+    height: 44px !important;
+    line-height: 44px !important;
+}
+
+nav {
+    overflow: hidden; }
+nav a {
+    -webkit-font-smoothing: antialiased; }
+nav ul li:hover, nav ul li.active {
+    background-color: #ea454b; }
+
+.header {
+    color: #ee6e73;
+    font-weight: 300; }
+
+.caption {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 30px; }
+
+.preview {
+    background-color: #FFF;
+    border: 1px solid #eee;
+    padding: 20px 20px; }
+
+header, main, footer {
+    padding-left: 240px; }
+
+.parallax-demo header, .parallax-demo main, .parallax-demo footer {
+    padding-left: 0; }
+
+footer.example {
+    padding-left: 0; }
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0; }
+}
+
+/********************
+  Index Page Styles
+********************/
+ul.side-nav.fixed li.logo {
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #ddd; }
+ul.side-nav.fixed li.logo:hover {
+    background-color: transparent; }
+
+ul.side-nav.fixed {
+    overflow: hidden; }
+ul.side-nav.fixed li {
+    line-height: 44px; }
+ul.side-nav.fixed li:hover, ul.side-nav.fixed li.active {
+    background-color: rgba(0, 0, 0, 0.05); }
+ul.side-nav.fixed li a {
+    font-size: 13px; }
+ul.side-nav.fixed ul.collapsible-accordion {
+    background-color: #FFF; }
+ul.side-nav.fixed:hover {
+    overflow-y: auto; }
+ul.side-nav.fixed li a {
+    font-size: 13px;
+}
+.side-nav .column-table li.active a, .side-nav.fixed .column-table li.active a {
+    color: #000;
+    margin: 0;
+} 
+.side-nav .column-table li.active, .side-nav.fixed .column-table li.active {
+    background-color: #FFF;
+}
+.side-nav .column-table .collapsible-body{
+    padding-left: 10px;
+}
+.side-nav .column-table .collapsible-body li{
+     padding-left: 40px;
+     font-size: 13px;   
+}
+.side-nav .column-table .collapsible-body li a{
+  margin: 0;
+}
+.bold > a {
+    font-weight: bold; }
+
+#logo-container {
+    height: 57px;
+    margin-bottom: 32px; }
+
+nav.top-nav {
+    height: 122px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none; }
+nav.top-nav a.page-title {
+    line-height: 122px;
+    font-size: 48px; }
+
+a.button-collapse.top-nav {
+    position: absolute;
+    left: 7.5%;
+    top: 0;
+    float: none;
+    margin-left: 1.5rem;
+    color: #fff;
+    font-size: 32px;
+    z-index: 2; }
+a.button-collapse.top-nav.full {
+    line-height: 122px; }
+
+@media only screen and (max-width : 600px) {
+    a.button-collapse.top-nav {
+        left: 5%; }
+}
+
+@media only screen and (max-width : 992px) {
+    nav .nav-wrapper {
+        text-align: center; }
+    nav .nav-wrapper a.page-title {
+        font-size: 36px; }
+}
+
+@media only screen and (min-width : 993px) {
+    .container {
+        width: 85%; }
+}
+
+#front-page-logo {
+    display: inline-block;
+    height: 100%;
+    pointer-events: none; }
+
+@media only screen and (max-width: 992px) {
+    #front-page-nav ul.side-nav li {
+        float: none;
+        padding: 0 15px; }
+    #front-page-nav ul.side-nav li:hover {
+        background-color: #ddd; }
+    #front-page-nav ul.side-nav li .active {
+        background-color: transparent; }
+    #front-page-nav ul.side-nav a {
+        color: #444; }
+}
+
+footer {
+    font-size: 0.9rem; }
+
+body.parallax-demo footer {
+    margin-top: 0; }
+
+.image-container {
+    width: 100%; }
+.image-container img {
+    max-width: 100%; }
+
+.condensed th td{
+    padding:0;
+}
+
+#loading-bar .bar {
+    background: #FC1919;
+    height: 4px;
+}
+
+#loading-bar-spinner .spinner-icon {
+    width: 18px;
+    height: 18px;
+    border: solid 4px transparent;
+    border-top-color: #FC1919;
+    border-left-color: #FC1919;
+    border-radius: 10px;
+    bottom: 10px;
+    position: fixed;
+}
+
+
+form .progress {
+    line-height: 15px;
+}
+
+.progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+}
+
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+}

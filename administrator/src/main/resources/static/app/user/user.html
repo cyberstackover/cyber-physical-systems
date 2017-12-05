@@ -1,0 +1,134 @@
+<div ng-cloak>
+    <div class="container">
+        <div class="section">
+            <h5 class="" translate="user.home.title">User</h5>
+            <a ng-click="showFormCreate(user)" class="waves-effect waves-light btn btn-sm">
+                <i class="material-icons left">add</i> Create User
+            </a>
+            <hr>
+            <div id="delete-form" class="modal">
+                <div class="modal-content">
+                    <h6>Are you sure to drop this user</h6>
+                    <p>{{user.username}}</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="drop(user)">OK</a>
+                </div>
+            </div>
+            <div class="card-panel">
+                <table class="responsive-table bordered">
+                    <thead>
+                        <tr>
+                            <th translate="user.id">Id</th>
+                            <th translate="user.username">Username</th>
+                            <th translate="user.enabled">Enabled</th>
+                            <th translate="user.authorities">Authorities</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in users">
+                            <td>{{user.id}}</td>
+                            <td>{{user.username}}</td>
+                            <td>{{user.enabled}}</td>
+                            <td>
+                                <small ng-repeat="authority in user.authorities">
+                                    {{authority}}, 
+                                </small>
+                            </td>
+                            <td class="text-right">
+                                <a href="javascript:void(0)" ng-click="showFormUpdate(user)" class="waves-effect waves-light btn blue-grey">
+                                    <i class="material-icons">edit</i>
+                                </a>
+                                <a href="javascript:void(0)" ng-click="confirm(user)" class="waves-effect waves-light btn red">
+                                    <i class="material-icons">delete</i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <pagination
+                    page="1"
+                    page-size="data.totalElements"
+                    total="data.totalPages"
+                    show-prev-next="true"
+                    dots="...."
+                    hide-if-empty="false"
+                    adjacent="2"
+                    scroll-top="false"
+                    pagination-action="changePage(page)" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="create-form" class="modal" style="height: 100%">
+    <form class="col s12" name="createForm" ng-submit="create()">
+        <div class="modal-content">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input ng-model="user.username" ng-required="user.name == null" ng-maxlength="50" id="user_name" type="text" class="validate">
+                    <label for="user_name">User Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <input ng-model="user.password" ng-required="user.password == null" ng-maxlength="50" id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-field col s12">
+                    <input ng-model="user.confirm_password" ng-required="user.confirm_password == null" ng-maxlength="50" id="confirm_password" type="password" class="validate">
+                    <label for="confirm_password">Confirm Password</label>
+                </div>
+                <div class="input-field col s12">
+                    <select id="input_roles" multiple ng-model="user.authority">
+                        <option value="" disabled selected>Choose Roles</option>
+                        <option value="ROLE_ADMIN">Administrator</option>
+                        <option value="ROLE_DEVELOPER">Developer</option>
+                        <option value="ROLE_USER">User</option>
+                    </select>
+                    <label for="roles">Roles</label>
+                </div>
+                <p>
+                    <input ng-model="user.enabled" value="t" id="enabled" type="checkbox">
+                    <label for="enabled">Enabled</label>
+                </p>
+            </div>
+        </div>
+        <div class="modal-footer" style="padding-left: 30px">
+            <button type="submit" class=" modal-action modal-close left waves-effect waves-green btn blue"><i class="material-icons left">add</i>Save</button>
+        </div>
+    </form>
+</div>
+
+<div id="update-form" class="modal" style="height: 100%">
+    <form class="col s12" name="createForm" ng-submit="update()">
+        <div class="modal-content">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input ng-model="user.username" ng-required="user.name == null" ng-maxlength="50" id="user_name" type="text" class="validate">
+                    <label for="user_name">User Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <input ng-model="user.password" ng-required="user.password == null" ng-maxlength="50" id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-field col s12">
+                    <input ng-model="user.confirm_password" ng-required="user.confirm_password == null" ng-maxlength="50" id="confirm_password" type="password" class="validate">
+                    <label for="confirm_password">Confirm Password</label>
+                </div>
+                <div class="input-field col s12">
+                    <select id="input_roles" ng-model="user.authorities" ng-options="authority.text for authority in authorities track by authority.key" multiple>
+                    </select>
+                    <label for="roles">Roles</label>
+                </div>
+                <p>
+                    <input ng-model="user.enabled" value="t" id="enabled" type="checkbox">
+                    <label for="enabled">Enabled</label>
+                </p>
+            </div>
+        </div>
+        <div class="modal-footer" style="padding-left: 30px">
+            <button type="submit" class=" modal-action modal-close left waves-effect waves-green btn blue"><i class="material-icons left">add</i>Save</button>
+        </div>
+    </form>
+</div>

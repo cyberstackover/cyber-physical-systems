@@ -1,0 +1,33 @@
+html { 
+  background: url('../images/cover/bg.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.no-padding {
+	padding: 0px !important;
+}
+
+.oauth-margin-login {
+	margin-top: 150px;
+}
+
+.normal-padding {
+	padding: 15px;
+}
+
+.hight-padding {
+	padding: 50px;
+}
+
+.separate {
+	margin-right: 15px;
+}
+
+.modal-base {
+	background: #fff;
+	display: none;
+	margin: auto;
+}

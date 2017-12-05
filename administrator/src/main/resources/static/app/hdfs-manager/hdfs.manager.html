@@ -1,0 +1,116 @@
+<div ng-cloak>
+    <div class="container">
+        <div class="section">
+            <nav>
+                <div class="nav-wrapper blue " style="padding-left: 10px">
+                    <div class="col s4">
+                        <a ng-repeat="breadcrumb in breadcrumbs" class="breadcrumb">
+                            {{breadcrumb}}
+                        </a>
+                        <ul class="right">
+                            <li><a href="javascript:void(0)" ng-click="mkdir('')"><i class="material-icons">create_new_folder</i></a></li>
+                            <li><a href="javascript:void(0)" ng-click="upload('')"><i class="material-icons">file_upload</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="card-panel">
+                <table class="responsive-table bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Owner</th>
+                            <th>Permission</th>
+                            <th>Block</th>
+                            <th>Owner</th>
+                            <th>Modification Time</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-if="breadcrumbs.length > 1">
+                            <td>
+                                <a href="javascript:void(0)" ng-click="listFile('..')">
+                                    ..
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr ng-repeat="dir in files">
+                            <td>
+                                <a href="javascript:void(0)" ng-click="listFile(dir.name)">
+                                    {{dir.name}}
+                                </a>
+                            </td>
+                            <td>{{dir.owner}}</td>
+                            <td>{{dir.permission}}</td>
+                            <td>{{dir.block_size}}</td>
+                            <td>{{dir.len}}</td>
+                            <td>{{convertTimeStamptToDate(dir.modification_time)}}</td>
+                            <td class="text-right">
+                                <a href="javascript:void(0)" >
+                                    <i class="material-icons">file_download</i>
+                                </a>
+                                <a href="javascript:void(0)" ng-click="showFormUpdate(dir)">
+                                    <i class="material-icons">edit</i>
+                                </a>
+                                <a href="javascript:void(0)" ng-click="remove(dir.name, true)">
+                                    <i class="material-icons">delete</i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="upload-form" class="modal">
+    <form class="col s12" name="uploadForm">
+        <div class="modal-content">
+            <fieldset>
+                <div class="input-field col s12">
+                    <input type="file" ngf-select ng-model="fileUpload" name="file" accept="*" ngf-max-size="500MB" required>
+                    <i ng-show="uploadForm.fileUpload.$error.required">*required</i><br>
+                    <i ng-show="uploadForm.fileUpload.$error.maxSize">File too large{{picFile.size / 1000000|number:1}}MB: max 500M</i>
+                    <label for="fileUpload">File</label>
+                </div>
+                <div class="modal-footer" style="padding-left: 30px">
+                    <button class="modal-action modal-close waves-effect waves-green btn blue" ng-click="upload(fileUpload)">Upload</button>
+                    <span class="progress" ng-show="fileUpload.progress >= 0">
+                        <div style="width:{{fileUpload.progress}}%" ng-bind="fileUpload.progress + '%'"></div>
+                    </span>
+                    <span ng-show="fileUpload.result">Upload Successful</span>
+                    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+                </div>
+            </fieldset>
+        </div>
+    </form>
+</div>
+
+<div id="mkdir-form" class="modal">
+    <form class="col s12" name="createForm" ng-submit="mkdir()">
+        <div class="modal-content">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input ng-model="directory.name" ng-required="directory == null" ng-maxlength="100" id="directory" type="text" class="validate">
+                    <label for="directory">Directory</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer" style="padding-left: 30px">
+            <button type="submit" class=" modal-action modal-close waves-effect waves-green btn blue"><i class="material-icons left">add</i>Save</button>
+        </div>
+    </form>
+</div>
+
+<div id="remove-form" class="modal">
+    <div class="modal-content">
+        <h6>Are you sure to drop </h6>
+        <p>{{directory}}</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="remove(directory, false)">OK</a>
+    </div>
+</div>

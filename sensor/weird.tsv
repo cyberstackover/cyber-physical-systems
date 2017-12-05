@@ -1,0 +1,84 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	weird
+#open	2015-12-21-11-01-01
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	name	addl	notice	peer
+#types	time	string	addr	port	addr	port	string	string	bool	string
+1450466093.425202	-	-	-	-	-	dns_unmatched_msg	-	F	bro
+1450466093.425622	-	-	-	-	-	dns_unmatched_msg	-	F	bro
+1450466103.425250	-	-	-	-	-	dns_unmatched_msg	-	F	bro
+1450467298.006490	-	-	-	-	-	dns_unmatched_msg	-	F	bro
+1450467298.006872	-	-	-	-	-	dns_unmatched_msg	-	F	bro
+1450467308.005692	-	-	-	-	-	dns_unmatched_msg	-	F	bro
+1450468044.216805	CxOD961mGL9hK08aB2	192.168.56.1	50292	192.168.56.12	22	data_before_established	-	F	bro
+1450468070.964727	-	-	-	-	-	dns_unmatched_msg	-	F	bro
+1450468098.285909	CjUtzU1jvytA968CJk	192.168.56.1	50294	192.168.56.12	22	data_before_established	-	F	bro
+1450468242.266987	-	-	-	-	-	dns_unmatched_msg	-	F	bro
+1450468286.061589	-	-	-	-	-	unknown_protocol_2	-	F	bro
+1450468296.075269	-	-	-	-	-	dns_unmatched_msg	-	F	bro
+1450468296.075678	-	-	-	-	-	dns_unmatched_msg	-	F	bro
+1450468363.274980	CBFAGO1jGjWcwUVDC5	192.168.56.11	137	192.168.56.1	137	dns_unmatched_reply	-	F	bro
+1450468373.275003	-	-	-	-	-	dns_unmatched_msg	-	F	bro
+1450468383.271989	-	-	-	-	-	dns_unmatched_msg	-	F	bro
+1450468403.272652	-	-	-	-	-	dns_unmatched_msg	-	F	bro
+1450468514.591201	C9a3BESlMwhrDJt15	192.168.56.11	34011	192.168.56.12	80	bad_TCP_checksum	-	F	bro
+1450468529.194330	-	-	-	-	-	dns_unmatched_msg	-	F	bro
+1450468687.671094	Cx5E6m3CpLgRmL6kNc	192.168.56.1	50445	192.168.56.12	80	data_before_established	-	F	bro
+1450468689.420376	Cke6fETjqQwbeyh1g	192.168.56.1	50446	192.168.56.12	80	data_before_established	-	F	bro
+1450468689.424350	CjBZCebshUpX3RUvk	192.168.56.1	50447	192.168.56.12	80	data_before_established	-	F	bro
+1450468689.424786	CNZXwC1gnBrMHt5mBg	192.168.56.1	50448	192.168.56.12	80	data_before_established	-	F	bro
+1450468689.427806	C6SZdb2gNvmtzz1jk7	192.168.56.1	50449	192.168.56.12	80	data_before_established	-	F	bro
+1450468689.429778	CvFTS9451uTVsevCxa	192.168.56.1	50450	192.168.56.12	80	data_before_established	-	F	bro
+1450468702.525357	Cd0cgx4b1clI5CHDM	192.168.56.1	50451	192.168.56.12	80	data_before_established	-	F	bro
+1450468703.609956	CjlDgv3OdYsgFTJWj3	192.168.56.1	50452	192.168.56.12	80	data_before_established	-	F	bro
+1450468704.226853	C4y8oE2oWEl8Wuvkkf	192.168.56.1	50453	192.168.56.12	80	data_before_established	-	F	bro
+1450468704.230672	CK2kgNQKMd14QtWi4	192.168.56.1	50454	192.168.56.12	80	data_before_established	-	F	bro
+1450468704.270495	CYw6iq2dIV2dta39y2	192.168.56.1	50455	192.168.56.12	80	data_before_established	-	F	bro
+1450468704.271877	C9Yc493DR6ftc6ccOb	192.168.56.1	50456	192.168.56.12	80	data_before_established	-	F	bro
+1450468708.215476	C43wCa1aPwwdhCUege	192.168.56.1	50457	192.168.56.12	80	data_before_established	-	F	bro
+1450468709.266873	C5LpCiOEywqDXXCOk	192.168.56.1	50458	192.168.56.12	80	data_before_established	-	F	bro
+1450468709.272180	CzNVgf1DWujK3IZ83j	192.168.56.1	50459	192.168.56.12	80	data_before_established	-	F	bro
+1450468709.272291	CcKybY1ZFf2rYR6bl6	192.168.56.1	50460	192.168.56.12	80	data_before_established	-	F	bro
+1450468709.646037	CLujgG4O0ZvbZERzM8	192.168.56.1	50461	192.168.56.12	80	data_before_established	-	F	bro
+1450468716.544709	CFkuvt1ETlDuUiqjR9	192.168.56.1	50463	192.168.56.12	80	data_before_established	-	F	bro
+1450468716.555721	CiiyfB3xJAPJM72C08	192.168.56.1	50464	192.168.56.12	80	data_before_established	-	F	bro
+1450468725.543966	CCkab71SBmGUiKViD2	192.168.56.1	50465	192.168.56.12	80	data_before_established	-	F	bro
+1450468726.033491	CJygH53NkBEN7ig7e4	192.168.56.1	50466	192.168.56.12	80	data_before_established	-	F	bro
+1450468726.041540	CQGFAt2EomFI9jn6zd	192.168.56.1	50467	192.168.56.12	80	data_before_established	-	F	bro
+1450468726.046184	CkTLXJTfq4vSDHaff	192.168.56.1	50468	192.168.56.12	80	data_before_established	-	F	bro
+1450468726.053574	CZfIY8fxIHwVEgse3	192.168.56.1	50469	192.168.56.12	80	data_before_established	-	F	bro
+1450468726.061324	CYgvPH2wKAvwJSPsS	192.168.56.1	50470	192.168.56.12	80	data_before_established	-	F	bro
+1450468735.435058	COkjLE3ZxzdJKct7Kj	192.168.56.1	50472	192.168.56.12	80	data_before_established	-	F	bro
+1450468735.702714	C9y3Ow1eKzZAMC4unh	192.168.56.1	50473	192.168.56.12	80	data_before_established	-	F	bro
+1450468735.708386	CAgwSg25LB1yR44qH8	192.168.56.1	50474	192.168.56.12	80	data_before_established	-	F	bro
+1450468735.713190	CMhfMR3y4O7UDpp0q6	192.168.56.1	50475	192.168.56.12	80	data_before_established	-	F	bro
+1450468735.724741	CXoLXC4wvLgyDf8Y8j	192.168.56.1	50476	192.168.56.12	80	data_before_established	-	F	bro
+1450468735.724825	CoQOFU1pfbi1G4v8Jk	192.168.56.1	50477	192.168.56.12	80	data_before_established	-	F	bro
+1450468768.042433	CyrFNArtu8gMMDvb	192.168.56.1	50479	192.168.56.12	80	data_before_established	-	F	bro
+1450468768.262803	CPCCJi3U6P32b8npV3	192.168.56.1	50480	192.168.56.12	80	data_before_established	-	F	bro
+1450468768.268975	CKOKQQ2NAr03slgNcb	192.168.56.1	50481	192.168.56.12	80	data_before_established	-	F	bro
+1450468768.274522	CeJGaYCjB1T6lgjRe	192.168.56.1	50482	192.168.56.12	80	data_before_established	-	F	bro
+1450468768.282712	CtoD8vW12BzFUflU4	192.168.56.1	50483	192.168.56.12	80	data_before_established	-	F	bro
+1450468768.282842	COMTJC2flXwWpKR4X1	192.168.56.1	50484	192.168.56.12	80	data_before_established	-	F	bro
+1450468774.383507	C5iLOt4slBkNDLVCn9	192.168.56.1	50485	192.168.56.12	80	data_before_established	-	F	bro
+1450468774.388496	CMseV044tuAe4qs0ql	192.168.56.1	50486	192.168.56.12	80	data_before_established	-	F	bro
+1450468774.399485	Cv4sIr13ixJGTw66si	192.168.56.1	50487	192.168.56.12	80	data_before_established	-	F	bro
+1450468774.406969	CeqEFL1qAzKdvqVssa	192.168.56.1	50488	192.168.56.12	80	data_before_established	-	F	bro
+1450468782.738084	CpwgA64hhlOowkQaHg	192.168.56.1	50489	192.168.56.12	80	data_before_established	-	F	bro
+1450468782.980381	CYTaI7241uSSjSBqqk	192.168.56.1	50490	192.168.56.12	80	data_before_established	-	F	bro
+1450468782.985188	CvInYF1XSaFsFn8SXe	192.168.56.1	50491	192.168.56.12	80	data_before_established	-	F	bro
+1450468782.996572	CIoEqrIHkycJi3J8b	192.168.56.1	50492	192.168.56.12	80	data_before_established	-	F	bro
+1450468783.004286	CHDhh11Wef7462H0T1	192.168.56.1	50493	192.168.56.12	80	data_before_established	-	F	bro
+1450468783.097332	CuSBEZ2JDdJFbjaU05	192.168.56.1	50494	192.168.56.12	80	data_before_established	-	F	bro
+1450468789.282485	CKT0texNrRpeWA824	192.168.56.1	50495	192.168.56.12	80	data_before_established	-	F	bro
+1450468789.445873	CbEXaN22aLm1fvMB7	192.168.56.1	50496	192.168.56.12	80	data_before_established	-	F	bro
+1450468789.456440	CqmpSl3q1zgBrN1zi7	192.168.56.1	50497	192.168.56.12	80	data_before_established	-	F	bro
+1450468789.463276	Ci3gia4ZAsbW8Z5xwa	192.168.56.1	50498	192.168.56.12	80	data_before_established	-	F	bro
+1450468789.468555	C9GhGK3pcSiTI4Puuk	192.168.56.1	50499	192.168.56.12	80	data_before_established	-	F	bro
+1450468799.351469	CNV9qb27zv7SuTMwr9	192.168.56.1	50500	192.168.56.12	80	data_before_established	-	F	bro
+1450468799.551116	C7HrMX3c4Az6oof4D5	192.168.56.1	50501	192.168.56.12	80	data_before_established	-	F	bro
+1450468799.563539	CAqyux4CnwMtedVmli	192.168.56.1	50502	192.168.56.12	80	data_before_established	-	F	bro
+1450468799.569476	CV3rlP1PPvlXVcmUtl	192.168.56.1	50503	192.168.56.12	80	data_before_established	-	F	bro
+1450468799.581282	CINEzo1M7W3LS3RUlf	192.168.56.1	50504	192.168.56.12	80	data_before_established	-	F	bro
